@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tomato Leaf Disease Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🍅 Tomato Leaf Disease Detector</h1>
+
+        <form action="/predict" method="post" enctype="multipart/form-data" class="upload-form" id="upload-form">
+            <input type="file" name="file" id="file-input" accept="image/*" required>
+            <div id="drop-area">Drag & Drop Image Here</div>
+            <img id="preview" src="#" alt="Image Preview" style="display: none;">
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+        <div class="result-box">
+            <h2>Result</h2>
+            <p><strong>Disease:</strong> {{ result }}</p>
+            <p><strong>Treatment:</strong> {{ treatment }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
