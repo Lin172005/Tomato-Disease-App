@@ -1,5 +1,6 @@
-tensorflow==2.13.0
 fastapi
 uvicorn
 jinja2
 python-multipart
+tensorflow==2.13.0
+Pillow
